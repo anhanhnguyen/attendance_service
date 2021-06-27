@@ -12,7 +12,11 @@ defmodule AttendenceServiceWeb.AttendanceView do
 
   def render("attendance.json", %{attendance: attendance}) do
     %{id: attendance.id,
+      timestamp: attendance.inserted_at,
+      user_id: attendance.user_id,
+      school_id: attendance.school_id,
       temperature: attendance.temperature,
-      image: attendance.image}
+      image: attendance.image,
+      type: attendance.type}
   end
 end

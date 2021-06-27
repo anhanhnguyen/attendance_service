@@ -10,6 +10,7 @@ defmodule AttendenceServiceWeb.Router do
 
     resources "/schools", SchoolController, except: [:new, :edit]
     resources "/users", UserController, except: [:new, :edit]
+    resources "/attendances", AttendanceController, except: [:new, :edit, :update]
   end
 
   # Enables LiveDashboard only for development

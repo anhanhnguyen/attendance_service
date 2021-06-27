@@ -6,11 +6,11 @@ defmodule AttendenceServiceWeb.AttendanceControllerTest do
 
   @create_attrs %{
     image: "some image",
-    temperature: 42
+    temperature: 40
   }
   @update_attrs %{
     image: "some updated image",
-    temperature: 43
+    temperature: 41
   }
   @invalid_attrs %{image: nil, temperature: nil}
 
@@ -40,7 +40,7 @@ defmodule AttendenceServiceWeb.AttendanceControllerTest do
       assert %{
                "id" => id,
                "image" => "some image",
-               "temperature" => 42
+               "temperature" => 40
              } = json_response(conn, 200)["data"]
     end
 
@@ -62,7 +62,7 @@ defmodule AttendenceServiceWeb.AttendanceControllerTest do
       assert %{
                "id" => id,
                "image" => "some updated image",
-               "temperature" => 43
+               "temperature" => 41
              } = json_response(conn, 200)["data"]
     end
 

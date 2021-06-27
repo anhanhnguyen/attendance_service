@@ -6,6 +6,7 @@ defmodule AttendenceService.Users.User do
     field :name, :string
 
     belongs_to :school, AttendenceService.Schools.School
+    has_many :attendaces, AttendenceService.Attendances.Attendance
 
     timestamps()
   end

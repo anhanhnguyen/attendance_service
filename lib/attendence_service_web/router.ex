@@ -9,6 +9,7 @@ defmodule AttendenceServiceWeb.Router do
     pipe_through :api
 
     resources "/schools", SchoolController, except: [:new, :edit]
+    resources "/users", UserController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development

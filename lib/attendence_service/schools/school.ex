@@ -5,6 +5,8 @@ defmodule AttendenceService.Schools.School do
   schema "schools" do
     field :name, :string
 
+    has_many :users, AttendenceService.Users.User
+
     timestamps()
   end
 

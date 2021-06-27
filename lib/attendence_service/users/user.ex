@@ -4,7 +4,8 @@ defmodule AttendenceService.Users.User do
 
   schema "users" do
     field :name, :string
-    field :school_id, :id
+
+    belongs_to :school, AttendenceService.Schools.School
 
     timestamps()
   end
@@ -12,7 +13,8 @@ defmodule AttendenceService.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :school_id])
+    |> validate_required([:name, :school_id])
+    |> assoc_constraint(:school)
   end
 end

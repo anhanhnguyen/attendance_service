@@ -3,8 +3,8 @@ defmodule AttendenceService.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add :name, :string
-      add :school_id, references(:schools, on_delete: :nothing)
+      add :name, :string, null: false
+      add :school_id, references(:schools, on_delete: :delete_all), null: false
 
       timestamps()
     end

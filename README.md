@@ -99,7 +99,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Attendance Service app: `AttendenceService.Supervisor`
 - HTTP connection handling: `AttendenceServiceWeb.Endpoint` (default)
-- Messaging: `Phoenix.PubSub.Supervisor` (defalt)
+- Messaging: `Phoenix.PubSub.Supervisor` (default)
 - System monitoring and metric supports: `AttendenceServiceWeb.Telemetry` (default)
 - Database connection handling: `AttendenceService.Repo` (default)
 - Aggregation handling: `AttendenceService.Attendances.Aggregate`
@@ -165,7 +165,7 @@ The request handling follows default Phoenix request handling model.
 5. View: Render the data with the corresponding view when all the necessary queries and calculation are done then send back the response. Views usually assosiate with their controllers such as:
     - `AttendenceServiceWeb.SchoolView`
     - `AttendenceServiceWeb.UserView`
-    - `AttendenceServiceWeb.AttendanceController`
+    - `AttendenceServiceWeb.AttendanceView`
 
 ### The flow of aggregation data
 

@@ -44,19 +44,19 @@ and produce a dashboard for school admins to view important metrics.
     Supervisor `AttendenceService.Attendances.Aggregate` supervises:
 
       - GenServer `AttendenceService.Attendances.AggregateServ`
-        *handles requests from `*Controller` and aggregation processes*
+        handles requests from `*Controller` and aggregation processes
 
       - DynamicSupervisor `AttendenceService.Attendances.AggregateDsup`
-        *supervises:*
+        supervises:
         
         - GenServer `AttendenceService.Attendances.AggregateWorker`
-          *handles aggregating calculation by:*
+          handles aggregating calculation by:
 
            - *Chunk large data if needed*
            - *Create child processes to handle chunk data*
 
       - TaskSupervisor `AttendenceService.Attendances.AggregateTask`
-        *supervises calculation tasks*
+        supervises calculation tasks
 
 * Error handling mechanism: using Phoenix default mechanism. The error details sent in responses are just in development mode. There are no sensitive information will be exposed when running the application in production mode.
 

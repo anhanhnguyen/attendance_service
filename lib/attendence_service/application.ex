@@ -14,9 +14,10 @@ defmodule AttendenceService.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: AttendenceService.PubSub},
       # Start the Endpoint (http/https)
-      AttendenceServiceWeb.Endpoint
+      AttendenceServiceWeb.Endpoint,
       # Start a worker by calling: AttendenceService.Worker.start_link(arg)
       # {AttendenceService.Worker, arg}
+      AttendenceService.Attendances.Aggregate
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

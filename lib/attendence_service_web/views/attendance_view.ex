@@ -19,4 +19,16 @@ defmodule AttendenceServiceWeb.AttendanceView do
       image: attendance.image,
       type: attendance.type}
   end
+
+  def render("aggregate.json", %{school: aggregate}) do
+    %{data: render_one(aggregate, AttendanceView, "school_aggregate.json")}
+  end
+
+  def render("school_aggregate.json", %{attendance: attendance}) do
+    %{school_id: attendance.school_id,
+      from: attendance.from,
+      to: NaiveDateTime.add(attendance.to, -1),
+      presences: attendance.presences,
+      absences: attendance.absences}
+  end
 end

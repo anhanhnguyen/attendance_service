@@ -12,6 +12,7 @@ defmodule AttendenceServiceWeb.UserView do
 
   def render("user.json", %{user: user}) do
     %{id: user.id,
-      name: user.name}
+      name: user.name,
+      school_id: user.school_id}
   end
 end
